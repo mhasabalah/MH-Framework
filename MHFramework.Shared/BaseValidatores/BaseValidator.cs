@@ -1,4 +1,4 @@
-﻿namespace MHFramework.Shared; 
+﻿namespace MHFramework.Shared;
 public class BaseValidator<TViewModel, Resource> :
     AbstractValidator<TViewModel>,
     IValidator<TViewModel>,
@@ -6,7 +6,5 @@ public class BaseValidator<TViewModel, Resource> :
     where TViewModel : BaseViewModel
     where Resource : class
 {
-    public BaseValidator(IBaseLocalizer<TViewModel, Resource> localizer)
-    {
-    }
+    public BaseValidator(IBaseLocalizer<TViewModel, Resource> localizer) { }
 }

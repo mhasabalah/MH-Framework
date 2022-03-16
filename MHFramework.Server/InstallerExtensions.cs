@@ -15,7 +15,6 @@ public static class InstallerExtensions
         AddInstallersFromAssemblies(services, configuration, assemblies);
     }
 
-
     public static void AddInstallersFromAssemblies(
         this IServiceCollection services, IConfiguration configuration, params Assembly[] assemblies)
     {
