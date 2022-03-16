@@ -15,14 +15,14 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
 
     public virtual async Task Add(TEntity entity)
     {
-        ThrowExceptionIfParameterNotSupplied(entity);
+        Utilities<TEntity>.ThrowExceptionIfParameterNotSupplied(entity);
 
         await dbSet.AddAsync(entity);
         await SaveChangesAsync();
     }
     public virtual async Task Add(IEnumerable<TEntity> entities)
     {
-        ThrowExceptionIfParameterNotSupplied(entities);
+        Utilities<TEntity>.ThrowExceptionIfParameterNotSupplied(entities);
 
         await dbSet.AddRangeAsync(entities);
         await SaveChangesAsync();
@@ -37,7 +37,7 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
     }
     public virtual async Task Update(TEntity entity, bool isAutosSaveChangesEnabled = true)
     {
-        ThrowExceptionIfParameterNotSupplied(entity);
+        Utilities<TEntity>.ThrowExceptionIfParameterNotSupplied(entity);
 
         await ThrowExceptionIfIfEntityExistsInDatabase(entity);
 
@@ -86,21 +86,9 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
         await SaveChangesAsync();
     }
 
-    private static void ThrowExceptionIfParameterNotSupplied(TEntity entity)
-    {
-        if (entity == null)
-            throw new ArgumentNullException($"{nameof(TEntity)} was not provided.");
-    }
-    private static void ThrowExceptionIfParameterNotSupplied(IEnumerable<TEntity> entities)
-    {
-        if (entities == null || !entities.Any())
-            throw new ArgumentNullException($"{nameof(TEntity)} was not provided.");
-    }
-
     public async Task<IDbContextTransaction> GetTransaction() => await _context.Database.BeginTransactionAsync();
 
     protected async Task SaveChangesAsync() => await _context.SaveChangesAsync();
 
     public void Dispose() => _context.Dispose();
 }
-
