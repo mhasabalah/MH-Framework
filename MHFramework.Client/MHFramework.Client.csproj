@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageId>$(AssemblyName)</PackageId>
+	</PropertyGroup>
+
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\MHFramework.Shared\MHFramework.Shared.csproj" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+	  <Folder Include="Configration\" />
+	</ItemGroup>
+
+</Project>
