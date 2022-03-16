@@ -1,4 +1,5 @@
 ﻿namespace MHFramework.Shared;
-public class BaseSettingsViewMode<TEntity> : BaseViewModel<TEntity> where TEntity : class
+public class BaseSettingsViewModel: BaseViewModel
 {
+    public string? Name { get; set; }
 }

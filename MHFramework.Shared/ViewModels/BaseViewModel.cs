@@ -1,6 +1,5 @@
 ﻿namespace MHFramework.Shared;
-
-public abstract class BaseViewModel<TEntity> where TEntity : class
+public class BaseViewModel
 {
-    public TEntity? Entity { get; set; }
+    public Guid Id { get; set; }
 }
