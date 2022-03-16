@@ -10,7 +10,6 @@ public abstract class BaseController<TEntity> : ControllerBase
 
     [HttpPost]
     public virtual async Task Post(TEntity entity) => await _unitOfWork.Create(entity);
-
     [HttpGet]
     public virtual async Task<IEnumerable<TEntity>> Get() => await _unitOfWork.Read();
     [HttpGet("{id}")]
