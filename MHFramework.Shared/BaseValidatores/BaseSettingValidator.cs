@@ -1,15 +1,13 @@
-﻿namespace MHFramework.shared;
-public class BaseSettingValidator<TEntity, Resource> : BaseValidator<TEntity, Resource>
-    where TEntity : BaseSettingsEntity
+﻿namespace MHFramework.Shared;
+public class BaseSettingsValidator<TViewModel, Resource> : BaseValidator<TViewModel, Resource>
+    where TViewModel : BaseSettingsViewModel
     where Resource : class
-
 {
-    public BaseSettingValidator(IBaseLocalizer<TEntity, Resource> localizer) : base(localizer)
+    public BaseSettingsValidator(IBaseLocalizer<TViewModel, Resource> localizer)
+        : base(localizer)
     {
-        const int nameMaxLength = 20;
-
-
-        RuleFor(e => e.Name).NotEmpty().WithMessage($"{nameof(TEntity)} Name is not empty");
-        RuleFor(e => e.Name).MaximumLength(nameMaxLength).WithMessage($"{nameof(TEntity)} Name max length = {nameMaxLength}");
+        const int nameMaxLength = 50;
+        RuleFor(e => e.Name).NotEmpty().WithMessage($"{nameof(TViewModel)} Name is not empty");
+        RuleFor(e => e.Name).MaximumLength(nameMaxLength).WithMessage($"{nameof(TViewModel)} Name max length = {nameMaxLength}");
     }
 }
