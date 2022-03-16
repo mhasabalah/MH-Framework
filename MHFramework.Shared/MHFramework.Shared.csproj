@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Folder Include="Configration\" />
+		<Folder Include="Resources\" />
+		<Folder Include="Validations\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="10.3.6" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.2" />
+	</ItemGroup>
+
+</Project>
