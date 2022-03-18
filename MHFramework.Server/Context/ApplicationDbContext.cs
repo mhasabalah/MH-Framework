@@ -1,14 +1,5 @@
 ﻿namespace MHFramework.Server;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : GenericContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-
-    //protected override void OnModelCreating(ModelBuilder modelBuilder)
-    //    => modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-
-    }
 }
