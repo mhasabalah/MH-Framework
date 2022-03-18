@@ -1,5 +1,5 @@
 ﻿namespace MHFramework.Server;
-public static class Utilities<TEntity> where TEntity : BaseSettingsEntity
+public static class Utilities<TEntity> where TEntity : BaseEntity
 {
     public static void ThrowExceptionIfParameterNotSupplied(TEntity entity)
     {
