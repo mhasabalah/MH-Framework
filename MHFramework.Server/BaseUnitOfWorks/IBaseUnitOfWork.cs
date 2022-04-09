@@ -1,16 +1,19 @@
 ﻿namespace MHFramework.Server;
-public interface IBaseUnitOfWork<TEntity> : IDisposable where TEntity : BaseEntity
+public interface IBaseUnitOfWork<TEntity, TViewModel> : IDisposable
+    where TEntity : BaseEntity
+    where TViewModel : BaseViewModel
 {
-    Task Create(TEntity entity);
-    Task Create(IEnumerable<TEntity> entities);
+    Task<TViewModel> Create(TViewModel viewModel);
+    Task<IEnumerable<TViewModel>> Create(IEnumerable<TViewModel> viewModels);
 
-    Task<IEnumerable<TEntity>> Read();
-    Task<TEntity> Read(Guid id);
+    Task<IEnumerable<TViewModel>> Read();
+    Task<TViewModel> Read(Guid id);
 
-    Task Update(TEntity entity);
-    Task Update(List<TEntity> entities);
+    Task<TViewModel> Update(TViewModel viewModel);
+    Task<IEnumerable<TViewModel>> Update(IEnumerable<TViewModel> viewModels);
 
-    Task Delete(Guid id);
-    Task Delete(TEntity entity);
-    Task Delete(IEnumerable<TEntity> entities);
+    Task<TViewModel> Delete(Guid id);
+    Task<TViewModel> Delete(TViewModel entity);
+    Task<IEnumerable<TViewModel>> Delete(IEnumerable<TViewModel> viewModels);
+
 }
