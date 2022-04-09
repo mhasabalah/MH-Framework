@@ -7,5 +7,5 @@
  - [ ] make auto configration with viewModel
 
 ## To Be Review
-uof
-rebos
+ - Uof
+ - Rebos
