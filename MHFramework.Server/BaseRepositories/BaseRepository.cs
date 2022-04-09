@@ -13,12 +13,12 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
     public virtual async Task<TEntity> Get(Guid id) => await
                                           dbSet.FirstOrDefaultAsync(e => e.Id == id) ?? Activator.CreateInstance<TEntity>();
 
-    public virtual async Task Add(TEntity entity)
+    public virtual async Task<TEntity> Add(TEntity entity)
     {
         Utilities<TEntity>.ThrowExceptionIfParameterNotSupplied(entity);
-
-        await dbSet.AddAsync(entity);
+        EntityEntry<TEntity> entityEntry = await dbSet.AddAsync(entity);
         await SaveChangesAsync();
+        return entityEntry.Entity;
     }
     public virtual async Task Add(IEnumerable<TEntity> entities)
     {
@@ -28,24 +28,65 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
         await SaveChangesAsync();
     }
 
-    public virtual async Task Update(List<TEntity> entities)
-    {
-        foreach (TEntity entity in entities)
-            await Update(entity, false);
-
-        await SaveChangesAsync();
-    }
-    public virtual async Task Update(TEntity entity, bool isAutosSaveChangesEnabled = true)
+    public virtual async Task<TEntity> Update(TEntity entity, bool isAutosSaveChangesEnabled = true)
     {
         Utilities<TEntity>.ThrowExceptionIfParameterNotSupplied(entity);
-
         await ThrowExceptionIfIfEntityExistsInDatabase(entity);
 
-        await Task.Run(() => dbSet.Update(entity));
+        var entityEntry = await Task.Run(() => dbSet.Update(entity));
 
         if (isAutosSaveChangesEnabled)
             await SaveChangesAsync();
+       
+        return entityEntry.Entity;
     }
+    public virtual async Task<IEnumerable<TEntity>> Update(IEnumerable<TEntity> entities)
+    {
+        foreach (TEntity entity in entities)
+        {
+            TEntity Tentity = await Update(entity, false);
+        }
+        await SaveChangesAsync();
+        return entities;
+    }
+
+    public virtual async Task<TEntity> Remove(Guid id)
+    {
+        var entityFromDb = await EntityFromDb(id);
+
+        await Task.Run(() => dbSet.Remove(entityFromDb));
+        await SaveChangesAsync();
+        return entityFromDb;
+    }
+    public virtual async Task<TEntity> Remove(TEntity entity)
+    {
+        if (entity == null || entity.Id == null)
+            throw new ArgumentNullException($"{nameof(TEntity)} was not provided.");
+
+        var entityFromDb = await EntityFromDb(entity.Id);
+
+        await Task.Run(() => dbSet.Remove(entity));
+        await SaveChangesAsync();
+        return entityFromDb;
+    }
+    public virtual async Task<IEnumerable<TEntity>> Remove(IEnumerable<TEntity> entities)
+    {
+        if (entities == null || !entities.Any())
+            throw new ArgumentNullException($"{nameof(TEntity)} was not provided.");
+
+        await Task.Run(() => dbSet.RemoveRange(entities));
+        await SaveChangesAsync();
+        return entities;
+    }
+
+    private async Task<TEntity?> EntityFromDb(Guid id)
+    {
+        TEntity? entityFromDb = await Get(id);
+        if (entityFromDb == null)
+            throw new ArgumentNullException($"{nameof(TEntity)} was not found in DB");
+        return entityFromDb;
+    }
+
     private async Task ThrowExceptionIfIfEntityExistsInDatabase(TEntity entity)
     {
         if (entity.Id == null && entity.Id != Guid.Empty)
@@ -54,36 +95,6 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where T
         TEntity? entityFromDb = await Get(entity.Id);
         if (entityFromDb == null)
             throw new ArgumentNullException($"{nameof(TEntity)} was not found in DB");
-    }
-
-    public virtual async Task Remove(Guid id)
-    {
-        TEntity? entityFromDb = await Get(id);
-        if (entityFromDb == null)
-            throw new ArgumentNullException($"{nameof(TEntity)} was not found in DB");
-
-        await Task.Run(() => dbSet.Remove(entityFromDb));
-        await SaveChangesAsync();
-    }
-    public virtual async Task Remove(TEntity entity)
-    {
-        if (entity == null || entity.Id == null)
-            throw new ArgumentNullException($"{nameof(TEntity)} was not provided.");
-
-        TEntity? entityFromDb = await Get(entity.Id);
-        if (entityFromDb == null)
-            throw new ArgumentNullException($"{nameof(TEntity)} was not found in DB");
-
-        await Task.Run(() => dbSet.Remove(entity));
-        await SaveChangesAsync();
-    }
-    public virtual async Task Remove(IEnumerable<TEntity> entities)
-    {
-        if (entities == null || !entities.Any())
-            throw new ArgumentNullException($"{nameof(TEntity)} was not provided.");
-
-        await Task.Run(() => dbSet.RemoveRange(entities));
-        await SaveChangesAsync();
     }
 
     public async Task<IDbContextTransaction> GetTransaction() => await _context.Database.BeginTransactionAsync();
