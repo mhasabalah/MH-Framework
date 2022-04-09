@@ -1,6 +1,6 @@
 ## To Do List
- - [ ] UOF
- - [ ] Rebos
+ - [x] UOF
+ - [x] Rebos
  - [ ] Controler with viewModel
  - [ ] appDbContext
  - [ ] add identify
