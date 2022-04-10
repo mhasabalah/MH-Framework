@@ -20,4 +20,4 @@ global using Serilog;
 
 global using AutoMapper;
 
-
+global using FluentValidation;

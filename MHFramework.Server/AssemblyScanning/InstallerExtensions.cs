@@ -1,5 +1,4 @@
 ﻿namespace MHFramework.Server;
-
 public static class InstallerExtensions
 {
     public static void AddInstallerFromAssembly(this IServiceCollection services, IConfiguration configuration, Type type)
