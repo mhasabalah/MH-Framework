@@ -15,4 +15,8 @@
 	<ItemGroup>
 		<ProjectReference Include="..\MHFramework.Shared\MHFramework.Shared.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Components\" />
+	</ItemGroup>
 </Project>
