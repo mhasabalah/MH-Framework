@@ -68,17 +68,4 @@ public abstract class BaseController<TEntity, TViewModel> : ControllerBase
         TViewModel viewModel = await _unitOfWork.Delete(id);
         return Ok(viewModel);
     }
-
-    //[HttpPost]
-    //public virtual async Task Post(TEntity entity) => await _unitOfWork.Create(entity);
-    //[HttpGet]
-    //public virtual async Task<IEnumerable<TEntity>> Get() => await _unitOfWork.Read();
-    //[HttpGet("{id}")]
-    //public virtual async Task<TEntity> Get([FromRoute] Guid id) => await _unitOfWork.Read(id);
-
-    //[HttpPut]
-    //public virtual async Task Put(TEntity entity) => await _unitOfWork.Update(entity);
-
-    //[HttpDelete("{id}")]
-    //public virtual async Task Delete(Guid id) => await _unitOfWork.Delete(id);
 }
