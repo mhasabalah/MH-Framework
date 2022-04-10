@@ -8,10 +8,10 @@ public class CommonServerInstaller : IInstaller
         services.AddScoped(typeof(IBaseSettingsUnitOfWork<,>), typeof(BaseSettingsUnitOfWork<,>));
         services.AddScoped(typeof(IBaseUnitOfWork<,>), typeof(BaseUnitOfWork<,>));
 
-        //services.AddFluentValidation(options =>
-        //{
-        //    options.AutomaticValidationEnabled = true;
-        //    options.DisableDataAnnotationsValidation = true;
-        //});
+        services.AddFluentValidation(options =>
+        {
+            options.AutomaticValidationEnabled = true;
+            options.DisableDataAnnotationsValidation = true;
+        });
     }
 }

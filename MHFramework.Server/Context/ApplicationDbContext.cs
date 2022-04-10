@@ -1,14 +1,8 @@
 ﻿namespace MHFramework.Server;
-
 public class ApplicationContext: IdentityDbContext
 {
-    protected ApplicationContext(DbContextOptions<ApplicationContext> contextOptions)
-        : base(contextOptions)
-    {
-    }
-    public ApplicationContext(DbContextOptions options) : base(options)
-    {
-    }
+    protected ApplicationContext(DbContextOptions<ApplicationContext> contextOptions) : base(contextOptions) { }
+    public ApplicationContext(DbContextOptions options) : base(options) { }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)

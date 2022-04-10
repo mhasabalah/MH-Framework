@@ -10,6 +10,7 @@
 	<ItemGroup>
 		<PackageReference Include="FluentValidation" Version="10.3.6" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
