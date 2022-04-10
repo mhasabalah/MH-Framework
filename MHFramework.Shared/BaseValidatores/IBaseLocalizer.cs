@@ -5,6 +5,6 @@ public interface IBaseLocalizer<TViewModel, Resource>
 {
     IStringLocalizer<Resource> EntityLocalizer { get; }
     IStringLocalizer<SharedResource> SharedLocalizer { get; }
-    //IStringLocalizer<ValidationResource> ValidationLocalizer { get; }
-    //IStringLocalizer<ExceptionResource> ExceptionLocalizer { get; }
+    IStringLocalizer<ValidationResource> ValidationLocalizer { get; }
+    IStringLocalizer<ExceptionResource> ExceptionLocalizer { get; }
 }
