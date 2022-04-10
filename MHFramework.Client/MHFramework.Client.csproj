@@ -8,8 +8,6 @@
 		<PackageId>$(AssemblyName)</PackageId>
 	</PropertyGroup>
 
-
-
 	<ItemGroup>
 		<SupportedPlatform Include="browser" />
 	</ItemGroup>
@@ -17,12 +15,4 @@
 	<ItemGroup>
 		<ProjectReference Include="..\MHFramework.Shared\MHFramework.Shared.csproj" />
 	</ItemGroup>
-
-
-
-	<ItemGroup>
-	  <Folder Include="Components\" />
-	  <Folder Include="Configration\" />
-	</ItemGroup>
-
 </Project>
