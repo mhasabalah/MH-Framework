@@ -14,6 +14,8 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\MHFramework.Shared\MHFramework.Shared.csproj" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.0" />
+
 	</ItemGroup>
 
 	<ItemGroup>
