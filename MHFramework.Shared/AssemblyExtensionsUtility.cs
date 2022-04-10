@@ -1,5 +1,5 @@
-﻿namespace MHFramework.Server;
-public class AssemblyExtensions
+﻿namespace MHFramework.Shared;
+public class AssemblyExtensionsUtility
 {
     public static Assembly[] GetReferencedAssemblies(Assembly assembly, string searchPattern)
     {
