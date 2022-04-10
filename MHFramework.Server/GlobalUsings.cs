@@ -15,6 +15,7 @@ global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 global using Microsoft.Extensions.Configuration;
@@ -24,5 +25,9 @@ global using Serilog;
 
 global using AutoMapper;
 
+
 global using FluentValidation;
 global using FluentValidation.AspNetCore;
+
+
+

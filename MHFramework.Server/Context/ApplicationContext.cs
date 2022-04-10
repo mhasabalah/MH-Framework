@@ -1,5 +1,5 @@
 ﻿namespace MHFramework.Server;
-public class ApplicationContext: IdentityDbContext
+public class ApplicationContext: IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 {
     protected ApplicationContext(DbContextOptions<ApplicationContext> contextOptions) : base(contextOptions) { }
     public ApplicationContext(DbContextOptions options) : base(options) { }
