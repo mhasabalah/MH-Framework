@@ -18,7 +18,7 @@ public class ApplicationContext: IdentityDbContext
 
     private void ApplyReferencedMigrationConfigurations(ModelBuilder modelBuilder)
     {
-        foreach (Assembly assemblyReferencedAssembly in AssemblyExtensions.GetReferencedAssemblies(Assembly.GetExecutingAssembly(), "*.Server.dll"))
+        foreach (Assembly assemblyReferencedAssembly in AssemblyExtensionsUtility.GetReferencedAssemblies(Assembly.GetExecutingAssembly(), "*.Server.dll"))
         {
             try
             {

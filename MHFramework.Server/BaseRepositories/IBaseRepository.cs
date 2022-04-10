@@ -12,7 +12,6 @@ public interface IBaseRepository<TEntity> : IDisposable where TEntity : BaseEnti
 
     Task<TEntity> Remove(Guid id);
     Task<TEntity> Remove(TEntity entity);
-    //Task Remove(IEnumerable<TEntity> entities);
     Task<IEnumerable<TEntity>> Remove(IEnumerable<TEntity> entities);
 
     Task<IDbContextTransaction> GetTransaction();
