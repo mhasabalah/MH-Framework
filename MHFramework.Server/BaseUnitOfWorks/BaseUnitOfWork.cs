@@ -1,5 +1,4 @@
 ﻿namespace MHFramework.Server;
-
 public class BaseUnitOfWork<TEntity, TViewModel> : IBaseUnitOfWork<TEntity, TViewModel>
     where TEntity : BaseEntity
     where TViewModel : BaseViewModel
