@@ -2,8 +2,8 @@
 public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
     protected DbSet<TEntity> dbSet;
-    private readonly GenericContext _context;
-    public BaseRepository(GenericContext context)
+    private readonly ApplicationContext _context;
+    public BaseRepository(ApplicationContext context)
     {
         _context = context;
         dbSet = _context.Set<TEntity>();
