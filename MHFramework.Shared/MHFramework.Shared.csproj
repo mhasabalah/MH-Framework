@@ -8,11 +8,12 @@
 		<PackageId>$(AssemblyName)</PackageId>
 		<Authors>Mohamed Hasabalah</Authors>
 		<Company>MHCompany</Company>
-		<PackageIcon>MHFramework.jpg</PackageIcon>
+		<PackageIcon>MHFramework.png</PackageIcon>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Include="C:\Users\Lenovo\OneDrive\Desktop\MHFramework.jpg">
+	  <None Include="C:\Users\Lenovo\OneDrive\Desktop\MHFramework.png">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
