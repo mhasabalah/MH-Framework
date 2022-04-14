@@ -2,12 +2,7 @@
 public class AuthorizeApi : IAuthorizeApi
 {
     private readonly HttpClient _httpClient;
-
-    public AuthorizeApi(HttpClient httpClient)
-    {
-        _httpClient = httpClient;
-    }
-
+    public AuthorizeApi(HttpClient httpClient) => _httpClient = httpClient;
     public async Task Login(LoginParameters loginParameters)
     {
         //var stringContent = new StringContent(JsonSerializer.Serialize(loginParameters), Encoding.UTF8, "application/json");

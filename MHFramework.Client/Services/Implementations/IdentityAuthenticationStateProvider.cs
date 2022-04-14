@@ -4,11 +4,7 @@ public class IdentityAuthenticationStateProvider : AuthenticationStateProvider
     private UserInfo _userInfoCache;
     private readonly IAuthorizeApi _authorizeApi;
 
-    public IdentityAuthenticationStateProvider(IAuthorizeApi authorizeApi)
-    {
-        _authorizeApi = authorizeApi;
-    }
-
+    public IdentityAuthenticationStateProvider(IAuthorizeApi authorizeApi) => _authorizeApi = authorizeApi;
     public async Task Login(LoginParameters loginParameters)
     {
         await _authorizeApi.Login(loginParameters);
