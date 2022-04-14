@@ -1,5 +1,5 @@
 ﻿namespace MHFramework.Server;
-public abstract class BaseSettingsController<TEntity, TViewModel> : BaseController<TEntity, TViewModel>
+public class BaseSettingsController<TEntity, TViewModel> : BaseController<TEntity, TViewModel>
     where TEntity : BaseSettingsEntity
     where TViewModel : BaseSettingsViewModel
 {

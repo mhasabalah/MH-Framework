@@ -1,5 +1,5 @@
 ﻿namespace MHFramework.Server;
-public abstract class BaseSettingsRepository<TEntity> : BaseRepository<TEntity>, IBaseSettingsRepository<TEntity>
+public class BaseSettingsRepository<TEntity> : BaseRepository<TEntity>, IBaseSettingsRepository<TEntity>
     where TEntity : BaseSettingsEntity
 {
     public BaseSettingsRepository(ApplicationContext context) : base(context) { }

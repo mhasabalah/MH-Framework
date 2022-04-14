@@ -1,5 +1,5 @@
 ﻿namespace MHFramework.Server;
-public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
+public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
 {
     protected DbSet<TEntity> dbSet;
     private readonly ApplicationContext _context;
