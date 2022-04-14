@@ -3,6 +3,10 @@ public class IdentityOptionsInstaller:IInstaller
 {
     public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {
+        services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
+            .AddEntityFrameworkStores<ApplicationContext>()
+            .AddDefaultTokenProviders();        
+        
         services.Configure<IdentityOptions>(options =>
         {
             // Password settings
@@ -20,11 +24,7 @@ public class IdentityOptionsInstaller:IInstaller
             // User settings
             options.User.RequireUniqueEmail = false;
         });
-
-        services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
-            .AddEntityFrameworkStores<ApplicationContext>()
-            .AddDefaultTokenProviders();
-
+        
         services.ConfigureApplicationCookie(options =>
         {
             options.Cookie.HttpOnly = true;
