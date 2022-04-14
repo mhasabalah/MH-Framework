@@ -4,13 +4,8 @@ public class BaseSettingsController<TEntity, TViewModel> : BaseController<TEntit
     where TViewModel : BaseSettingsViewModel
 {
     private readonly IBaseSettingsUnitOfWork<TEntity, TViewModel> _baseSettingsUnitOfWork;
-    private readonly IValidator<TViewModel> _validator;
 
-    protected BaseSettingsController(IBaseSettingsUnitOfWork<TEntity, TViewModel> unitOfWork, IValidator<TViewModel> validator) : base(unitOfWork, validator)
-    {
-        _baseSettingsUnitOfWork = unitOfWork;
-        _validator = validator; 
-    }
+    protected BaseSettingsController(IBaseSettingsUnitOfWork<TEntity, TViewModel> unitOfWork) : base(unitOfWork) => _baseSettingsUnitOfWork = unitOfWork;
 
     [HttpGet("Search/{searchText}")]
     public virtual async Task<IEnumerable<TEntity>> Search([FromRoute] string searchText) => await _baseSettingsUnitOfWork.Search(searchText);
