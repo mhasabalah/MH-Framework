@@ -6,7 +6,17 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageId>$(AssemblyName)</PackageId>
+		<Authors>Mohamed Hasabalah</Authors>
+		<Company>MHCompany</Company>
+		<PackageIcon>MHFramework.jpg</PackageIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="C:\Users\Lenovo\OneDrive\Desktop\MHFramework.jpg">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="11.0.1" />
