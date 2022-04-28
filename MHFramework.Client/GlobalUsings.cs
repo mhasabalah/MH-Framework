@@ -12,5 +12,4 @@ global using System.Text;
 global using Newtonsoft.Json;
 global using Blazored.Toast.Services;
 
-
 global using Blazored.FluentValidation;
