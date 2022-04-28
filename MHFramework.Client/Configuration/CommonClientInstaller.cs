@@ -8,5 +8,7 @@ public class CommonClientInstaller :IInstaller
         services.AddScoped<IdentityAuthenticationStateProvider>();
         services.AddScoped<AuthenticationStateProvider>(s => s.GetRequiredService<IdentityAuthenticationStateProvider>());
         services.AddScoped<IAuthorizeApi, AuthorizeApi>();
+        services.AddScoped(typeof(IBaseLocalizer<,>), typeof(BaseLocalizer<,>));
+        services.AddSingleton<AppObserver>();
     }
 }
