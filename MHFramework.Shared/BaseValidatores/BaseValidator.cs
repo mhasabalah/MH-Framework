@@ -6,5 +6,5 @@ public class BaseValidator<TViewModel, Resource> :
     where TViewModel : BaseViewModel
     where Resource : class
 {
-    public BaseValidator(IBaseLocalizer<TViewModel, Resource> localizer) { }
+    public BaseValidator(IBaseLocalizer<TViewModel, Resource> localizer) {}
 }

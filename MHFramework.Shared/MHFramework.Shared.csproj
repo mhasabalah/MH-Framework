@@ -9,7 +9,7 @@
 		<Authors>Mohamed Hasabalah</Authors>
 		<Company>MHCompany</Company>
 		<PackageIcon>MHFramework.png</PackageIcon>
-		<Version>1.0.1</Version>
+		<Version>1.0.8</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,12 +20,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="10.3.6" />
-		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.2" />
+		<PackageReference Include="Castle.Core" Version="4.4.1" />
+		<PackageReference Include="FluentValidation" Version="10.4.0" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.4" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.2-mauipre.1.22054.8" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.2-mauipre.1.22054.8" />
 
-		<PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+
 	</ItemGroup>
 
 	<ItemGroup>
@@ -38,11 +40,6 @@
 			<DesignTime>True</DesignTime>
 			<AutoGen>True</AutoGen>
 			<DependentUpon>SharedResource.resx</DependentUpon>
-		</Compile>
-		<Compile Update="Resources\ValidationResource.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>ValidationResource.resx</DependentUpon>
 		</Compile>
 	</ItemGroup>
 
@@ -62,8 +59,7 @@
 			<Generator></Generator>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Resources\ValidationResource.resx">
-			<Generator>PublicResXFileCodeGenerator</Generator>
-			<LastGenOutput>ValidationResource.Designer.cs</LastGenOutput>
+			<Generator></Generator>
 		</EmbeddedResource>
 	</ItemGroup>
 

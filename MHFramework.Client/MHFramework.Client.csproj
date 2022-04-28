@@ -9,7 +9,7 @@
 		<Authors>Mohamed Hasabalah</Authors>
 		<Company>MHCompany</Company>
 		<PackageIcon>MHFramework.png</PackageIcon>
-		<Version>1.0.1</Version>
+		<Version>1.0.8</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,7 +20,7 @@
 		<ProjectReference Include="..\MHFramework.Shared\MHFramework.Shared.csproj" />
 		<PackageReference Include="Blazored.FluentValidation" Version="2.0.3" />
 		<PackageReference Include="Blazored.Toast" Version="3.2.2" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.4" />
 		<PackageReference Include="Toolbelt.Blazor.HttpClientInterceptor" Version="10.1.0" />
 
 	</ItemGroup>

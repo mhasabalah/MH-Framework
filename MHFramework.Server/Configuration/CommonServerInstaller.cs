@@ -8,6 +8,8 @@ public class CommonServerInstaller : IInstaller
         services.AddScoped(typeof(IBaseUnitOfWork<,>), typeof(BaseUnitOfWork<,>));
         services.AddScoped(typeof(IBaseSettingsUnitOfWork<,>), typeof(BaseSettingsUnitOfWork<,>));
 
+        services.AddScoped(typeof(IBaseLocalizer<,>), typeof(BaseLocalizer<,>));
+
         services.AddFluentValidation(options =>
         {
             options.AutomaticValidationEnabled = true;
