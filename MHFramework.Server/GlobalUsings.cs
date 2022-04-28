@@ -25,9 +25,4 @@ global using Serilog;
 
 global using AutoMapper;
 
-
-global using FluentValidation;
 global using FluentValidation.AspNetCore;
-
-
-
