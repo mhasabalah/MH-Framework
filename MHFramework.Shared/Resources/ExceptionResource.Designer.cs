@@ -59,5 +59,23 @@ namespace MHFramework.Shared.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is duplicated..
+        /// </summary>
+        public static string DuplicatedField {
+            get {
+                return ResourceManager.GetString("DuplicatedField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In-use item cannot be deleted..
+        /// </summary>
+        public static string InUseItemCannotBeDeleted {
+            get {
+                return ResourceManager.GetString("InUseItemCannotBeDeleted", resourceCulture);
+            }
+        }
     }
 }
