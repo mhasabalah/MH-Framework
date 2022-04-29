@@ -40,10 +40,10 @@
 			<AutoGen>True</AutoGen>
 			<DependentUpon>SharedResource.resx</DependentUpon>
 		</Compile>
-		<Compile Update="Resources\SharedResourses.Designer.cs">
+		<Compile Update="Resources\SharedResource.Designer.cs">
 		  <DesignTime>True</DesignTime>
 		  <AutoGen>True</AutoGen>
-		  <DependentUpon>SharedResourses.resx</DependentUpon>
+		  <DependentUpon>SharedResource.resx</DependentUpon>
 		</Compile>
 		<Compile Update="Resources\ValidationResource.Designer.cs">
 		  <DesignTime>True</DesignTime>
@@ -64,9 +64,9 @@
 			<Generator>PublicResXFileCodeGenerator</Generator>
 			<LastGenOutput>SharedResource.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
-		<EmbeddedResource Update="Resources\SharedResourses.resx">
+		<EmbeddedResource Update="Resources\SharedResource.resx">
 		  <Generator>PublicResXFileCodeGenerator</Generator>
-		  <LastGenOutput>SharedResourses.Designer.cs</LastGenOutput>
+		  <LastGenOutput>SharedResource.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 		<EmbeddedResource Update="Resources\ValidationResource.ar.resx">
 			<Generator></Generator>
