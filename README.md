@@ -6,7 +6,7 @@
  - [x] add identify
  - [x] make auto configration with viewModel
  - [x] add loclizer in validation shared 
- - [ ] add loclizer in client side
+ - [x] add loclizer in client side
 
 ## To Be Review
  - Uof
