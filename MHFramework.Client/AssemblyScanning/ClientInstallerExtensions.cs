@@ -17,7 +17,7 @@ public static class ClientInstallerExtensions
         foreach (var assembly in assmblies)
         {
             IEnumerable<TypeInfo> installerTypes = assembly.DefinedTypes
-                .Where(type => typeof(IInstaller).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract);
+                .Where(type => typeof(IClientInstaller).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract);
 
             IEnumerable<IClientInstaller> installers = installerTypes.Select(Activator.CreateInstance)?.Cast<IClientInstaller>();
             foreach (var installer in installers)
