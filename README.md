@@ -10,6 +10,8 @@
  - [ ] make Rebo & UOF without viewmodel 
  - [ ] make version of framework without viewmodel
 
-## To Be Review
- - Uof
- - Rebos
+## **Install package** 
+
+    Install-Package MHFramework.client -Version 1.1.1.1
+    Install-Package MHFramework.server -Version 1.1.1.1
+    Install-Package MHFramework.shared -Version 1.1.1.1
