@@ -7,6 +7,8 @@
  - [x] make auto configration with viewModel
  - [x] add loclizer in validation shared 
  - [x] add loclizer in client side
+ - [ ] make Rebo & UOF without viewmodel 
+ - [ ] make version of framework without viewmodel
 
 ## To Be Review
  - Uof
