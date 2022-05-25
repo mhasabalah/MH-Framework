@@ -9,6 +9,7 @@
  - [x] add loclizer in client side
  - [ ] make Rebo & UOF without viewmodel 
  - [ ] make version of framework without viewmodel
+ - [ ] make admin create rules
 
 ## **Install package** 
 
